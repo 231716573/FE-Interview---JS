@@ -80,6 +80,7 @@ Person.prototype 是一个普通对象，我们无需关注它有哪些属性，
 所以 Person.prototype.__proto__ === Object.prototype
 
 第四题，参照第二题，因为 Person 和 Object 一样都是构造函数
+                Object.__proto__ == Function.prototype
 
 第五题：
 Object.prototype 对象也有proto属性，但它比较特殊，为 null 。因为 null 处于原型链的顶端，这个只能记住。
