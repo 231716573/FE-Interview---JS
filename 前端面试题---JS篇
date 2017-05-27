@@ -53,3 +53,34 @@ var b = new obj;
     obj.prototype.name = "name2";    // 设置原型对象
     var a = obj("name1");    //直接调用函数，a等于window，name为window的属性。
     var b = new obj;    //调用函数实例化对象，this指向obj的实例化对象。
+    
+    
+5.
+
+1、person1.__proto__ 是什么？
+2、Person.__proto__ 是什么？
+3、Person.prototype.__proto__ 是什么？
+4、Object.__proto__ 是什么？
+5、Object.prototype__proto__ 是什么？
+
+答案：
+第一题：
+因为 person1.__proto__ === person1 的构造函数.prototype
+因为 person1的构造函数 === Person
+所以 person1.__proto__ === Person.prototype
+
+第二题：
+因为 Person.__proto__ === Person的构造函数.prototype
+因为 Person的构造函数 === Function
+所以 Person.__proto__ === Function.prototype
+
+第三题：
+Person.prototype 是一个普通对象，我们无需关注它有哪些属性，只要记住它是一个普通对象。
+因为一个普通对象的构造函数 === Object
+所以 Person.prototype.__proto__ === Object.prototype
+
+第四题，参照第二题，因为 Person 和 Object 一样都是构造函数
+
+第五题：
+Object.prototype 对象也有proto属性，但它比较特殊，为 null 。因为 null 处于原型链的顶端，这个只能记住。
+Object.prototype.__proto__ === null
