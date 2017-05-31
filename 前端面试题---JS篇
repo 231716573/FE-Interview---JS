@@ -104,3 +104,14 @@ console.log(Object.prototype.__proto__) //null
 
 console.log(Array.__proto__ == Function.prototype)// true
 
+疑点解惑：
+1、Object.__proto__ === Function.prototype // true
+Object 是函数对象，是通过new Function()创建的，所以Object.__proto__指向Function.prototype。（参照第八小节：「所有函数对象的__proto__都指向Function.prototype」）
+
+2、Function.__proto__ === Function.prototype // true
+Function 也是对象函数，也是通过new Function()创建，所以Function.__proto__指向Function.prototype。
+
+3、Function.prototype.__proto__ === Object.prototype //true
+其实这一点我也有点困惑，不过也可以试着解释一下。
+Function.prototype是个函数对象，理论上他的__proto__应该指向 Function.prototype，就是他自己，自己指向自己，没有意义。
+JS一直强调万物皆对象，函数对象也是对象，给他认个祖宗，指向Object.prototype。Object.prototype.__proto__ === null，保证原型链能够正常结束。
