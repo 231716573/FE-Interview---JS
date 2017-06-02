@@ -115,3 +115,22 @@ Function 也是对象函数，也是通过new Function()创建，所以Function.
 其实这一点我也有点困惑，不过也可以试着解释一下。
 Function.prototype是个函数对象，理论上他的__proto__应该指向 Function.prototype，就是他自己，自己指向自己，没有意义。
 JS一直强调万物皆对象，函数对象也是对象，给他认个祖宗，指向Object.prototype。Object.prototype.__proto__ === null，保证原型链能够正常结束。
+
+
+
+
+6.建立一个function,接受参数n=5,不用for循环输出数组【1,2,3,4,5】
+
+function show(n) {
+    var arr = [];
+    return (function fn() {
+        arr.unshift(n);
+        n--;
+        if (n != 0) {
+            fn();
+        }
+        return arr;
+
+    })()
+}
+show(5)//[1,2,3,4,5]
