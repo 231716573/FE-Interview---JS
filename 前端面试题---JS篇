@@ -163,3 +163,18 @@ s = y + z;  //NaN
 我们首先看function add，两个add都没有返回值，而我们知道，没有明确返回值的，全部返回undefined，
 所以，y和z都会是undefined，那么s自然也就不会是一个数字了，没错，s应该是NaN
 
+9.
+function Foo() {
+    var i = 0;
+    return function() {
+        console.log(i++);
+    }
+}
+ 
+var f1 = Foo(),
+    f2 = Foo();
+f1();
+f1();
+f2();
+
+//0 1 0
