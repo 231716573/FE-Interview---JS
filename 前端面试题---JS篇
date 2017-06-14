@@ -134,3 +134,17 @@ function show(n) {
     })()
 }
 show(5)//[1,2,3,4,5]
+
+
+7.判断类型
+console.log(typeof(null))        //object
+console.log(typeof(undefined))   //undefined
+console.log(typeof(Number))      //function
+console.log(typeof(String))      //function
+console.log(typeof(NaN))         //number
+console.log(typeof(object))      //undefined
+var str = 'abc'
+console.log(typeof(str++))       //number
+console.log(str)                 //NaN
+console.log(NaN==undefined);     //false
+console.log(NaN==NaN);           //false
