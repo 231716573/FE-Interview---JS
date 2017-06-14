@@ -204,3 +204,11 @@ res.push("她叫喵喵，");
 res.push("她时而可爱，时而认真，");
 res.push("她那天真的笑声可以让人忘掉一切烦恼。");
 console.log(res.join("")); 
+
+11. [1,2,3].map(parseInt)
+答案：[1,NaN,NaN]  //因为parseInt(1,0) = 1,parseInt(2,1) = NaN,parseInt(3,2) = NaN
+
+[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19].map(parseInt)
+答案：[1, NaN, NaN, NaN, NaN, NaN, NaN, NaN, NaN, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27]  //因为parseInt(10,9)=9
+
+
