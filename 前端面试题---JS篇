@@ -225,3 +225,14 @@ function foo(){
 
 
 13.
+function myFunction(a,b){
+	if(a > b){
+		return;
+	}
+	x = a + b;
+}
+myFunction(5,4);
+console.log(x); // x is not defined
+
+myFunction(4,5);
+console.log(x); // 9
